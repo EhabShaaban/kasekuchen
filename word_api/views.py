@@ -2,10 +2,10 @@ from rest_framework import generics
 from word.models import Word
 from .serializers import WordSerializer
 
-class WordList(generics.ListCreateAPIView):
+class WordList(generics.ListAPIView):
     queryset = Word.objects.all()
     serializer_class = WordSerializer
 
-class WordDetail(generics.RetrieveDestroyAPIView):
+class WordDetail(generics.RetrieveAPIView):
     queryset = Word.objects.all()
     serializer_class = WordSerializer
